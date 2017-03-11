@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Classic Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <form class="calc">
+    <p class="calc-display">
+      <input type="text" name="res" id="res" value="" class="calc-display-input" onfocus="this.blur()">
+    </p>
+    <p class="calc-row">
+
+      <button type="button" class="calc-button calc-button-gray" onclick="mean('AVG')">AVG</button>
+      <button type="button" class="calc-button calc-button-yellow calc-button-big" onclick="e()">=</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="a('7')">7</button>
+      <button type="button" class="calc-button" onclick="a('8')">8</button>
+      <button type="button" class="calc-button" onclick="a('9')">9</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('/')">÷</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="a('4')">4</button>
+      <button type="button" class="calc-button" onclick="a('5')">5</button>
+      <button type="button" class="calc-button" onclick="a('6')">6</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('*')">x</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="a('1')">1</button>
+      <button type="button" class="calc-button" onclick="a('2')">2</button>
+      <button type="button" class="calc-button" onclick="a('3')">3</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('-')">-</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="a('0')">0</button>
+      <button type="button" class="calc-button" onclick="a('.')">.</button>
+      <button type="button" class="calc-button" onclick="s('')">C</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('+')">+</button>
+    </p>
+  </form>
+
+  
+  </section>
+
+  <script>
+    function s(v) { document.getElementById('res').value = v }
+    function a(v) { document.getElementById('res').value += v }
+    function e() { try { s(eval(document.getElementById('res').value)) } catch(e) { s('Error') } }
+    
+    // Did not get the AVG button to work. I am confused how to put array in display. 
+
+    var numbers = new Array();
+
+    function mean(){var m = 'numbers'.length == 0 ? 0 : sum(null)/numbers.length;document.getElementById("res").value;}
+
+
+
+
+  </script>
+</body>
+</html>
